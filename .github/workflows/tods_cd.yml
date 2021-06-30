@@ -35,8 +35,8 @@ jobs:
         with:
           proj-path: src/Tennis-Open-Data-Standards/Tennis-Open-Data-Standards.csproj
       - name: 'Get Previous tag'
-        id: previoustag
         uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        id: previoustag
       - name: Changelog
         uses: scottbrenner/generate-changelog-action@master
         id: Changelog
@@ -44,8 +44,8 @@ jobs:
           from-tag: ${{ steps.previoustag.outputs.tag }}
           to-tag: HEAD
       - name: Create Release
-        id: create_release
         uses: actions/create-release@latest
+        id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
