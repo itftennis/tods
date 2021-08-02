@@ -13,7 +13,7 @@ jobs:
         dotnet-version: ['3.0' ]
 
     steps:
-      - name: Checkout code
       - uses: actions/checkout@v2
+      - name: Checkout code
         with:
             fetch-depth: 0
