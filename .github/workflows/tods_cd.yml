@@ -1,0 +1,19 @@
+name: tods-cd
+
+on: 
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: ['3.0' ]
+
+    steps:
+      - name: Checkout code
+      - uses: actions/checkout@v2
+        with:
+            fetch-depth: 0
