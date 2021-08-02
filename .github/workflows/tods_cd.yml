@@ -17,3 +17,7 @@ jobs:
       - name: Checkout code
         with:
             fetch-depth: 0
+      - uses: actions/setup-dotnet@v1.7.2
+        name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
