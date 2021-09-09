@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>Tennis_Open_Data_Standards</RootNamespace>
-    <PackageVersion>0.8.0</PackageVersion>
-    <InformationalVersion>0.8.0</InformationalVersion>
-    <AssemblyVersion>0.8.0.0</AssemblyVersion>
+    <PackageVersion>0.8.1</PackageVersion>
+    <InformationalVersion>0.8.1</InformationalVersion>
+    <AssemblyVersion>0.8.1.0</AssemblyVersion>
     <Copyright>ITF Tennis - MIT License</Copyright>
   </PropertyGroup>
 

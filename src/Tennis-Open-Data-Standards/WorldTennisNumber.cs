@@ -35,7 +35,7 @@ namespace Tennis_Open_Data_Standards
 
         //XML minOccurs=1 to 1        
         public DateTime RatingDate { get; set; }
-        
+
         //XML minOccurs=0 to 1        
         [NoUnboundCustom]
         [XmlElement("MatchUps", typeof(MatchUps))]
