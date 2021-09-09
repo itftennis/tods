@@ -11,8 +11,9 @@ namespace Tennis_Open_Data_Standards
         [XmlElement(IsNullable = false)]
         public Collection<Court> Court { get; set; }
     }
+
     public class Court : CommonElements
-        {
+    {
         /// <summary>
         /// CourtId
         /// </summary>
@@ -21,8 +22,8 @@ namespace Tennis_Open_Data_Standards
         /// Please see the <see href="https://itftennis.atlassian.net/wiki/spaces/TODS/pages/1273102565/Including+Multiple+Identifiers">How to Include multiple Identifiers</see>
         /// </remarks>
 
-        //XML minOccurs=1 to 1
-        [XmlElement(IsNullable = true)]        
+        //XML minOccurs=1 to 1        
+        [XmlElement(IsNullable = true)]
         [JsonProperty(Required = Required.Always)]
         public string CourtId { get; set; }
         /// <summary>
@@ -82,7 +83,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime? SurfacedDate { get; set; }            
-        
-    }    
+        public DateTime? SurfacedDate { get; set; }
+
+    }
 }

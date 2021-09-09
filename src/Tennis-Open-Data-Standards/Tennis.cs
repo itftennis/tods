@@ -14,7 +14,7 @@ namespace Tennis_Open_Data_Standards
     /// <remarks>
     /// This is a root element and holds all the collections 
     /// </remarks>
-    [Tods(Version = "0.0.8")]
+    [Tods(Version = "0.0.8.1")]
     public class Tennis : ITennis
     {
         /// <summary>
@@ -154,6 +154,15 @@ namespace Tennis_Open_Data_Standards
         [NoUnboundCustom]
         [XmlElement("WorldTennisNumbers", typeof(WorldTennisNumbers))]
         public Collection<WorldTennisNumber> WorldTennisNumbers { get; set; }
+        /// <summary>
+        /// PersonChangeDelta
+        /// </summary>
+        /// <remarks>
+        /// Please see <see cref="PersonChangeDelta">PersonChangeDelta</see>
+        /// </remarks>
+        [NoUnboundCustom]
+        [XmlElement("PersonChangeDelta", typeof(PersonChangeDelta))]
+        public Collection<PersonChangeDelta> PersonChangeDelta { get; set; }
 
     }
 }
