@@ -2,9 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
+    [NoUnboundCustom]
     [XmlRoot("Persons"), XmlType(TypeName = "Persons")]
     public class Persons
     {
@@ -28,6 +30,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         [JsonProperty(Required = Required.Always)]
         public string PersonId { get; set; }
         //[JsonProperty(Required = Required.Always)] ITF requirement and not TODS
@@ -142,6 +145,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Addresses", typeof(Addresses))]
         public Collection<Address> Addresses { get; set; }
         /// <summary>
@@ -153,6 +157,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("OnlineProfiles", typeof(OnlineProfiles))]
         public Collection<OnlineProfile> OnlineProfiles { get; set; }
         /// <summary>

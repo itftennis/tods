@@ -14,6 +14,7 @@ namespace Tennis_Open_Data_Standards
     /// <remarks>
     /// This is a root element and holds all the collections 
     /// </remarks>
+    [Tods(Version = "0.0.7")]
     public class Tennis : ITennis
     {
         /// <summary>
@@ -33,7 +34,7 @@ namespace Tennis_Open_Data_Standards
         /// <remarks>
         /// The date the document is provided.
         /// </remarks>
-        [JsonProperty(Required = Required.Always)]        
+        [JsonProperty(Required = Required.Always)]
         public DateTime Date { get; set; }
         /// <summary>
         /// DataStandardsVersion
@@ -43,8 +44,8 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         [JsonProperty(Required = Required.Always)]
-        [XmlElement(ElementName = "DataStandardsVersion", IsNullable = true)]
         public string DataStandardsVersion { get; set; }
         /// <summary>
         /// CodesVersion
@@ -59,7 +60,7 @@ namespace Tennis_Open_Data_Standards
         /// <remarks>
         /// Please see <see cref="OrderOfPlays">OrderOfPlays</see>
         /// </remarks>
-        //XML minOccurs=0 to 1  
+        //XML minOccurs=0 to 1                                         
         [NoUnboundCustom]
         [XmlElement("OrderOfPlays", typeof(OrderOfPlays))]               
         public Collection<OrderOfPlay> OrderOfPlays { get; set; }
@@ -142,7 +143,7 @@ namespace Tennis_Open_Data_Standards
         /// Please see <see cref="Extensions">Extensions</see>
         /// </remarks>
         [NoUnboundCustom]
-        [XmlElement("Extensions", typeof(Extensions))]        
+        [XmlElement("Extensions", typeof(Extensions))]
         public Collection<Extension> Extensions { get; set; }
         /// <summary>
         /// WorldTennisNumbers

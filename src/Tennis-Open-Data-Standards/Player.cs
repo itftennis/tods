@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Tennis_Open_Data_Standards.Attributes;
@@ -15,7 +14,6 @@ namespace Tennis_Open_Data_Standards
     }
     public class Player
     {
-        [Key]
         [JsonProperty(Required = Required.Always)]
         public int PlayerNumber { get; set; }
         [JsonProperty(Required = Required.Always)]

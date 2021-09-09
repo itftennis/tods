@@ -1,9 +1,11 @@
 ﻿using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
+    [NoUnboundCustom]
     [XmlRoot("Teams"), XmlType(TypeName = "Teams")]
     public class Teams
     {
@@ -26,6 +28,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         [JsonProperty(Required = Required.Always)]
         public string TeamId { get; set; }
         /// <summary>
@@ -79,6 +82,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("OnlineProfiles", typeof(OnlineProfiles))]
         public Collection<OnlineProfile> OnlineProfiles { get; set; }
 

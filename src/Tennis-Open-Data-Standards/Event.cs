@@ -2,9 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
+    [NoUnboundCustom]
     [XmlRoot("Events"), XmlType(TypeName = "Events")]
     public class Events
     {
@@ -22,6 +24,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         [JsonProperty(Required = Required.Always)]
         public string EventId { get; set; }
         /// <summary>
@@ -103,7 +106,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
         /// <summary>
         /// End Date
         /// </summary>
@@ -112,7 +115,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
         /// <summary>
         /// Entries
         /// </summary>
@@ -121,6 +124,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Entries", typeof(Entries))]
         public Collection<Entry> Entries { get; set; }
         /// <summary>
@@ -131,6 +135,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Stages", typeof(Stages))]
         public Collection<Stage> Stages { get; set; }
     }

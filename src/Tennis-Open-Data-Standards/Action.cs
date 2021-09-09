@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 using Tennis_Open_Data_Standards.Attributes;
 
@@ -22,8 +21,6 @@ namespace Tennis_Open_Data_Standards
     /// </remarks>
     public class Action
     {
-        [Key]
-        public string ActionId { get; set; }
         public string SortOrder { get; set; }
         public DateTime? Timestamp { get; set; }
         public string Code { get; set; }

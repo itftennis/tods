@@ -2,9 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
+    [NoUnboundCustom]
     [XmlRoot("OrderOfPlayItems"), XmlType(TypeName = "OrderOfPlayItems")]
     public class OrderOfPlayItems
     {
@@ -13,8 +15,9 @@ namespace Tennis_Open_Data_Standards
     }
     public class OrderOfPlayItem : CommonElements
     {
-        //XML minOccurs=1 to 1
+        //XML minOccurs=1 to 1        
         [JsonProperty(Required = Required.Always)]
+        [XmlElement(IsNullable = true)]
         public string OrderOfPlayItemId { get; set; }
         public string Name { get; set; }
         //XML minOccurs=0 to 1
