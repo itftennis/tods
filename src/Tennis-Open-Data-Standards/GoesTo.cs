@@ -30,12 +30,12 @@
         /// </remarks>
         public string DrawId { get; set; }
         /// <summary>
-        /// MatchId
+        /// MatchUpId
         /// </summary>
         /// <remarks>
-        /// The Match the winning or losing participant goes to.
+        /// The MatchUp the winning or losing participant goes to.
         /// </remarks>
-        public string MatchId { get; set; }
+        public string MatchUpId { get; set; }
         /// <summary>
         /// RoundNumber
         /// </summary>

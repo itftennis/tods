@@ -14,19 +14,19 @@ namespace Tennis_Open_Data_Standards
     /// <remarks>
     /// This is a root element and holds all the collections 
     /// </remarks>
-    [Tods(Version = "0.0.7")]
+    [Tods(Version = "0.0.8")]
     public class Tennis : ITennis
     {
         /// <summary>
-        /// ProviderId
+        /// ProviderOrganisationID
         /// </summary>
         /// <remarks>
-        /// An identifier for the party providing the data. 
+        /// An identifier for the organisation providing the data. 
         /// Please see the <see href="https://itftennis.atlassian.net/wiki/spaces/TODS/pages/1273102565/Including+Multiple+Identifiers">How to Include multiple Identifiers</see>
         /// </remarks>
         [JsonProperty(Required = Required.Always)]
-        [XmlElement(ElementName = "ProviderId", IsNullable = true)]
-        public string ProviderId { get; set; }
+        [XmlElement(ElementName = "ProviderOrganisationID", IsNullable = false)]
+        public string ProviderOrganisationID { get; set; }
 
         /// <summary>
         /// Date

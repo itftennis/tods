@@ -12,7 +12,7 @@ namespace Tennis_Open_Data_Standards
         [XmlElement(IsNullable = false)]
         public Collection<Ranking> Ranking { get; set; }
     }
-    public class Ranking : CommonElements
+    public class Ranking
     {
         [JsonProperty(Required = Required.Always)]
         //XML minOccurs=1 to 1

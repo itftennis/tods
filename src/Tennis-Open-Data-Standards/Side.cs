@@ -5,7 +5,6 @@ using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
     [XmlRoot("Sides"), XmlType(TypeName = "Sides")]
     public class Sides
     {
@@ -46,7 +45,7 @@ namespace Tennis_Open_Data_Standards
         /// Players
         /// </summary>
         /// <remarks>
-        /// The members of the team or pair who are actually playing the match
+        /// The members of the team or pair who are actually playing the MatchUp
         /// </remarks>
 
         //XML minOccurs=0 to 1

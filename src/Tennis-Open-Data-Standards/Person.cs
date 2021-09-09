@@ -6,7 +6,6 @@ using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
     [XmlRoot("Persons"), XmlType(TypeName = "Persons")]
     public class Persons
     {
@@ -50,7 +49,7 @@ namespace Tennis_Open_Data_Standards
         /// <seealso href="https://cs.stanford.edu/people/miles/iso8859.html" />
         /// <seealso href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1" />
         /// </remarks>
-        public string PreferredFamilyName { get; set; }
+        public string StandardFamilyName { get; set; }
         /// <summary>
         /// Preferred Given Name
         /// </summary>
@@ -59,7 +58,7 @@ namespace Tennis_Open_Data_Standards
         /// <seealso href="https://cs.stanford.edu/people/miles/iso8859.html" />
         /// <seealso href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1" />
         /// </remarks>
-        public string PreferredGivenName { get; set; }
+        public string StandardGivenName { get; set; }
         /// <summary>
         /// Passport Family Name
         /// </summary>
@@ -119,9 +118,10 @@ namespace Tennis_Open_Data_Standards
         /// Gender
         /// </summary>
         /// <remarks>
-        /// As per recognised by Tournament Entry Process. Please see <see href="Gender">Gender</see>
+        /// either of the two main categories (male and female) into which humans and most other living things are divided on the basis of their reproductive functions.
         /// </remarks>
-        public string Gender { get; set; }
+        public string Sex { get; set; }
+
         /// <summary>
         /// Nationality Code
         /// </summary>

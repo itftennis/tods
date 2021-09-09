@@ -5,7 +5,6 @@ using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
     [XmlRoot("Rounds"), XmlType(TypeName = "Rounds")]
     public class Rounds
     {

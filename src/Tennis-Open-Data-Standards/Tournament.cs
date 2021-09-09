@@ -6,7 +6,6 @@ using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
     [Serializable()]
     [XmlRoot("Tournaments"), XmlType(TypeName = "Tournaments")]
     public class Tournaments
@@ -21,7 +20,7 @@ namespace Tennis_Open_Data_Standards
     public class Tournament : CommonElements
     {
         /// <summary>
-        /// TournamentId
+        /// ProviderTournamentID
         /// </summary>
         /// <remarks>
         /// A unique tournament Identifier. 
@@ -29,9 +28,21 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=1 to 1
-        [XmlElement(IsNullable = true)]
+        [XmlElement(IsNullable = false)]
         [JsonProperty(Required = Required.Always)]
-        public string TournamentId { get; set; }
+        public string ProviderTournamentID { get; set; }
+        /// <summary>
+        /// UnifiedTournamentID
+        /// </summary>
+        /// <remarks>
+        /// A unique tournament Identifier. 
+        /// Please see the <see href="https://itftennis.atlassian.net/wiki/spaces/TODS/pages/1273102565/Including+Multiple+Identifiers">How to Include multiple Identifiers</see>
+        /// </remarks>
+
+        //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = false)]
+        [JsonProperty(Required = Required.Always)]
+        public string UnifiedTournamentID { get; set; }
 
         /// <summary>
         /// Tournament Groups
@@ -220,16 +231,16 @@ namespace Tennis_Open_Data_Standards
         [XmlElement("Events", typeof(Events))]
         public Collection<Event> Events { get; set; }
         /// <summary>
-        /// Matches
+        /// MatchUps
         /// </summary>
         /// <remarks>
-        /// Please see <see cref="Matches">Matches</see>
+        /// Please see <see cref="MatchUps">MatchUps</see>
         /// </remarks>
 
         //XML minOccurs=0 to 1
         [NoUnboundCustom]
-        [XmlElement("Matches", typeof(Matches))]
-        public Collection<Match> Matches { get; set; }
+        [XmlElement("MatchUps", typeof(MatchUps))]
+        public Collection<MatchUp> MatchUps { get; set; }
 
         /// <summary>
         /// Any Coach, Official, Umpire or Player etc associated with the Tournament
