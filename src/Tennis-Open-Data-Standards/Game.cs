@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Tennis_Open_Data_Standards.Attributes;
@@ -15,6 +16,11 @@ namespace Tennis_Open_Data_Standards
     }
     public class Game : CommonElements
     {
+        [Key]
+        public Guid Id { get; set; }
+        public string GameId { get; set; }
+        public CommonElements CommonElements { get; set; }
+
         [JsonProperty(Required = Required.Always)]
         public int GameNumber { get; set; }
         //XML minOccurs=0 to 1
