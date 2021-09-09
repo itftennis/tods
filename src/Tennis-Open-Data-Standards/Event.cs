@@ -6,7 +6,6 @@ using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
     [XmlRoot("Events"), XmlType(TypeName = "Events")]
     public class Events
     {
@@ -92,7 +91,13 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
         public string AgeCategory { get; set; }
         /// <summary>
-        /// Gender
+        /// AgeCategoryCutoffDate
+        /// </summary>
+        /// <remarks>
+        /// Please see <see href="~AgeCategory">AgeCategory</see>
+        /// </remarks>
+        public DateTime? AgeCategoryCutoffDate { get; set; }
+        /// <summary>        /// Gender
         /// </summary>
         /// <remarks>
         /// Please see <see href="~Gender">Gender</see>

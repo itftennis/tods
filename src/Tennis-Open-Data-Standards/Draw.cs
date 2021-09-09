@@ -6,7 +6,6 @@ using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
     [XmlRoot("Draws"), XmlType(TypeName = "Draws")]
     public class Draws
     {
@@ -115,26 +114,16 @@ namespace Tennis_Open_Data_Standards
         [XmlElement("Entries", typeof(Entries))]
         public Collection<Entry> Entries { get; set; }
         /// <summary>
-        /// Matches
+        /// MatchUps
         /// </summary>
         /// <remarks>
-        /// Please see <see cref="Matches">Matches</see>
+        /// Please see <see cref="MatchUps">MatchUps</see>
         /// </remarks>
 
         //XML minOccurs=0 to 1
         [NoUnboundCustom]
-        [XmlElement("Matches", typeof(Matches))]
-        public Collection<Match> Matches { get; set; }
-        /// <summary>
-        /// Ties
-        /// </summary>
-        /// <remarks>
-        /// Please see <see cref="Ties">Ties</see>
-        /// </remarks>
+        [XmlElement("MatchUps", typeof(MatchUps))]
+        public Collection<MatchUp> MatchUps { get; set; }
 
-        //XML minOccurs=0 to 1
-        [NoUnboundCustom]
-        [XmlElement("Ties", typeof(Ties))]
-        public Collection<Tie> Ties { get; set; }
     }
 }

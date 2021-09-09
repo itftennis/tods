@@ -1,11 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
-using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
     [XmlRoot("RankingItems"), XmlType(TypeName = "RankingItems")]
     public class RankingItems
     {
@@ -14,8 +12,8 @@ namespace Tennis_Open_Data_Standards
     }
     public class RankingItem
     {
-        //XML minOccurs=1 to 1        
-        [XmlElement(IsNullable = true)]
+        //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]        
         public string Type { get; set; }
         //XML minOccurs=1 to 1
         public int? SortOrder { get; set; }

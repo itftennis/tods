@@ -6,7 +6,7 @@ using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
+
     [XmlRoot("WorldTennisNumbers"), XmlType(TypeName = "WorldTennisNumbers")]
     public class WorldTennisNumbers
     {
@@ -35,10 +35,10 @@ namespace Tennis_Open_Data_Standards
 
         //XML minOccurs=1 to 1        
         public DateTime RatingDate { get; set; }
-
+        
         //XML minOccurs=0 to 1        
         [NoUnboundCustom]
-        [XmlElement("Matches", typeof(Matches))]
-        public Collection<Match> Matches { get; set; }
+        [XmlElement("MatchUps", typeof(MatchUps))]
+        public Collection<MatchUp> MatchUps { get; set; }
     }
 }

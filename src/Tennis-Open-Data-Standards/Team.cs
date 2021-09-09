@@ -5,7 +5,6 @@ using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
     [XmlRoot("Teams"), XmlType(TypeName = "Teams")]
     public class Teams
     {
@@ -16,7 +15,7 @@ namespace Tennis_Open_Data_Standards
     /// 
     /// </summary>
     /// <remarks>
-    /// A collection of persons forming one side of a match, tie, competition or tournament
+    /// A collection of persons forming one side of a MatchUp, competition or tournament
     /// </remarks>
     public class Team : CommonElements
     {
@@ -88,7 +87,7 @@ namespace Tennis_Open_Data_Standards
 
 
         // ?? TODS discussion
-        //public Collection<Match> Matches { get; set; }
+        //public Collection<MatchUp> MatchUps { get; set; }
         // ?? TODS discussion
         //public Collection<Tournament> Tournaments { get; set; }
     }

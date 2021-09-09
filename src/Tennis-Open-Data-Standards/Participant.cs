@@ -5,7 +5,6 @@ using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
-    [NoUnboundCustom]
     [XmlRoot("Participants"), XmlType(TypeName = "Participants")]
     public class Participants
     {
@@ -14,10 +13,10 @@ namespace Tennis_Open_Data_Standards
     }
 
 
-    [NoUnboundCustom]
     [XmlRoot("Members"), XmlType(TypeName = "Members")]
     public class Members
-    {        
+    {
+        [NoUnboundCustom]
         [XmlElement(IsNullable = false)]
         public Collection<Participant> Member { get; set; }
     }
