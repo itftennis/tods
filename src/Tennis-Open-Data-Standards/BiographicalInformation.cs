@@ -67,14 +67,14 @@
         /// <remarks>
         /// The age a person started playing tennis
         /// </remarks>
-        public string AgeBeganTennis { get; set; }
+        public int? AgeBeganTennis { get; set; }
         /// <summary>
         /// AgeTurnedPro
         /// </summary>
         /// <remarks>
         /// The age a person became a professional tennis player.
         /// </remarks>
-        public string AgeTurnedPro { get; set; }
+        public int? AgeTurnedPro { get; set; }
         /// <summary>
         /// Coach
         /// </summary>
