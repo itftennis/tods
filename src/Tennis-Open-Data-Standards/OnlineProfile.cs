@@ -1,8 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Xml.Serialization;
+using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
+    [NoUnboundCustom]
     [XmlRoot("OnlineProfiles"), XmlType(TypeName = "OnlineProfiles")]
     public class OnlineProfiles
     {

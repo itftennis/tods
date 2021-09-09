@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Tennis_Open_Data_Standards.Attributes;
@@ -15,7 +14,7 @@ namespace Tennis_Open_Data_Standards
         public Collection<Set> Set { get; set; }
     }
 
-    public class Set 
+    public class Set : CommonElements
     {
         /// <summary>
         /// SetNumber
@@ -23,10 +22,8 @@ namespace Tennis_Open_Data_Standards
         /// <remarks>
         /// A number representing the set. Usually 1-5
         /// </remarks>
-        [Key]
         [JsonProperty(Required = Required.Always)]
         public int SetNumber { get; set; }
-        public CommonElements CommonElements { get; set; }        
         /// <summary>
         /// Timestamp
         /// </summary>
@@ -95,8 +92,9 @@ namespace Tennis_Open_Data_Standards
         /// <remarks>
         /// A hierarchy containing multiple game details
         /// </remarks>
-        
+
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Games", typeof(Games))]
         public Collection<Game> Games { get; set; }
     }

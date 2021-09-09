@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Tennis_Open_Data_Standards.Attributes;
@@ -21,14 +20,12 @@ namespace Tennis_Open_Data_Standards
     /// </remarks>
     public class Shot
     {
-        
         /// <summary>
         /// Number
         /// </summary>
         /// <remarks>
         /// Number of the shot in the rally.
         /// </remarks>
-        [Key]
         [JsonProperty(Required = Required.Always)]
         public int ShotNumber { get; set; }
         /// <summary>

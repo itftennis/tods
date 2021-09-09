@@ -2,9 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
+    [NoUnboundCustom]
     [Serializable()]
     [XmlRoot("Tournaments"), XmlType(TypeName = "Tournaments")]
     public class Tournaments
@@ -27,6 +29,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         [JsonProperty(Required = Required.Always)]
         public string TournamentId { get; set; }
 
@@ -39,6 +42,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("TournamentGroups", typeof(TournamentGroups))]
         public Collection<TournamentGroup> TournamentGroups { get; set; }
         /// <summary>
@@ -86,6 +90,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("TournamentAddresses", typeof(Addresses))]
         public Collection<Address> TournamentAddresses { get; set; }
         /// <summary>
@@ -96,6 +101,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("TournamentContacts", typeof(Contacts))] 
         public Collection<Contact> TournamentContacts { get; set; }
         /// <summary>
@@ -103,7 +109,7 @@ namespace Tennis_Open_Data_Standards
         /// </summary>
         /// <remarks>
         /// Please see <see cref="TennisOfficials">TennisOfficials</see>
-        /// </remarks>
+        /// </remarks>        
         [XmlElement("TennisOfficials", typeof(TennisOfficials))]
         public TennisOfficials TennisOfficials { get; set; }
         /// <summary>
@@ -129,7 +135,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
         /// <summary>
         /// End Date
         /// </summary>
@@ -138,7 +144,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
         /// <summary>
         /// Season
         /// </summary>
@@ -176,7 +182,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime EntriesOpen { get; set; }
+        public DateTime? EntriesOpen { get; set; }
         /// <summary>
         /// Entries Close
         /// </summary>
@@ -185,7 +191,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime EntriesClose { get; set; }
+        public DateTime? EntriesClose { get; set; }
         /// <summary>
         /// Withdrawal Deadline
         /// </summary>
@@ -194,7 +200,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime WithdrawalDeadline { get; set; }
+        public DateTime? WithdrawalDeadline { get; set; }
         /// <summary>
         /// Total Prize Money
         /// </summary>
@@ -210,8 +216,21 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Events", typeof(Events))]
         public Collection<Event> Events { get; set; }
+        /// <summary>
+        /// Matches
+        /// </summary>
+        /// <remarks>
+        /// Please see <see cref="Matches">Matches</see>
+        /// </remarks>
+
+        //XML minOccurs=0 to 1
+        [NoUnboundCustom]
+        [XmlElement("Matches", typeof(Matches))]
+        public Collection<Match> Matches { get; set; }
+
         /// <summary>
         /// Any Coach, Official, Umpire or Player etc associated with the Tournament
         /// </summary>
@@ -220,6 +239,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Participants", typeof(Participants))]
         public Collection<Participant> Participants { get; set; }
     }

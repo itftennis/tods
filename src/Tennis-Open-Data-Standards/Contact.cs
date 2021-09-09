@@ -1,9 +1,11 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
+using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
+    [NoUnboundCustom]
     [XmlRoot("Contacts"), XmlType(TypeName = "Contacts")]
     public class Contacts
     {
@@ -72,6 +74,6 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public bool IsPrivate { get; set; }
+        public bool? IsPrivate { get; set; }
     }
 }

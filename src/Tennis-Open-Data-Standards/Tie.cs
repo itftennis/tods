@@ -2,9 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
+    [NoUnboundCustom]
     [XmlRoot("Ties"), XmlType(TypeName = "Ties")]
     public class Ties
     {
@@ -21,6 +23,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         [JsonProperty(Required = Required.Always)]
         public string TieId { get; set; }
         /// <summary>
@@ -65,7 +68,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
         /// <summary>
         /// EndDate
         /// </summary>
@@ -135,10 +138,12 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Sides", typeof(Sides))]
         public Collection<Side> Sides { get; set; }
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Matches", typeof(Matches))]
         public Collection<Match> Matches { get; set; }
     }

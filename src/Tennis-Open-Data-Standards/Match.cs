@@ -2,9 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using Tennis_Open_Data_Standards.Attributes;
 
 namespace Tennis_Open_Data_Standards
 {
+    [NoUnboundCustom]
     [XmlRoot("Matches"), XmlType(TypeName = "Matches")]
     public class Matches
     {
@@ -29,9 +31,21 @@ namespace Tennis_Open_Data_Standards
         /// Please see the <see href="https://itftennis.atlassian.net/wiki/spaces/TODS/pages/1273102565/Including+Multiple+Identifiers">How to Include multiple Identifiers</see>
         /// </remarks>
 
-        //XML minOccurs=1 to 1
+        //XML minOccurs=1 to 1        
         [JsonProperty(Required = Required.Always)]
+        [XmlElement(IsNullable = true)]
         public string MatchId { get; set; }
+        /// <summary>
+        /// DrawId
+        /// </summary>
+        /// <remarks>
+        /// An optional field to link matches to a draw if not using the Event->Stage->Draw->Rounds structure
+        /// Please see the <see cref="Draw">Draw</see>
+        /// </remarks>
+
+        //XML minOccurs=0 to 1
+        //[JsonProperty(Required = Required.Always)]
+        public string DrawId { get; set; }
         /// <summary>
         /// RoundNumber
         /// </summary>
@@ -124,7 +138,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
         /// <summary>
         /// EndDate
         /// </summary>
@@ -158,8 +172,8 @@ namespace Tennis_Open_Data_Standards
         /// Temperature in degrees
         /// </remarks>
 
-        //XML minOccurs=0 to 1
-        public decimal? Temperature { get; set; }
+        //XML minOccurs=0 to 1        
+        public decimal Temperature { get; set; }
         /// <summary>
         /// Humidity
         /// </summary>
@@ -167,8 +181,8 @@ namespace Tennis_Open_Data_Standards
         /// Humidity as a percentage
         /// </remarks>
 
-        //XML minOccurs=0 to 1
-        public decimal? Humidity { get; set; }
+        //XML minOccurs=0 to 1        
+        public decimal Humidity { get; set; }
         /// <summary>
         /// Sides
         /// </summary>
@@ -177,6 +191,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Sides", typeof(Sides))]
         public Collection<Side> Sides { get; set; }
         /// <summary>
@@ -187,6 +202,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Sets", typeof(Sets))]
         public Collection<Set> Sets { get; set; }
     }

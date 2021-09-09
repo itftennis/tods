@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Tennis_Open_Data_Standards.Attributes;
@@ -16,7 +15,6 @@ namespace Tennis_Open_Data_Standards
     }
     public class Point
     {
-        [Key]
         [JsonProperty(Required = Required.Always)]
         public int PointNumber { get; set; }
         //XML minOccurs=0 to 1
@@ -65,6 +63,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
+        [NoUnboundCustom]
         [XmlElement("Shots", typeof(Shots))]
         public Collection<Shot> Shots { get; set; }
     }
