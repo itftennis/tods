@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 using Tennis_Open_Data_Standards.Attributes;
@@ -22,6 +23,7 @@ namespace Tennis_Open_Data_Standards
         /// <remarks>
         /// A number representing the set. Usually 1-5
         /// </remarks>
+        [Key]
         [JsonProperty(Required = Required.Always)]
         public int SetNumber { get; set; }
         /// <summary>
@@ -36,7 +38,7 @@ namespace Tennis_Open_Data_Standards
         /// SetFormat
         /// </summary>
         /// <remarks>
-        /// Please see the 'Match Format Code' document for more information.
+        /// Please see the 'MatchUp Format Code' document for more information.
         /// </remarks>
         public string SetFormat { get; set; }
         /// <summary>
