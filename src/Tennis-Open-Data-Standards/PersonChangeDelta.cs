@@ -6,17 +6,17 @@ using Tennis_Open_Data_Standards.Attributes;
 namespace Tennis_Open_Data_Standards
 {
     [NoUnboundCustom]
-    [XmlRoot("Upserted"), XmlType(TypeName = "Upserted")]
+    [XmlRoot("Upsert"), XmlType(TypeName = "Upsert")]
     public class Upserted
     {
         [XmlElement(IsNullable = false)]
-        public Collection<UpsertedItem> UpsertedItems { get; set; }
+        public Collection<Upsert> Upsert { get; set; }
     }
-    public class UpsertedItem
+    public class Upsert
     {
-        public string OrganisationID { get; set; }
-        public string ClientID { get; set; }
-        public DateTime DateTime { get; set; }
+        public string UpsertedOrganisationID { get; set; }
+        public string UpsertedClientID { get; set; }
+        public DateTime UpsertDateTime { get; set; }
         public Collection<Person> Person { get; set; }
     }
 
@@ -25,13 +25,13 @@ namespace Tennis_Open_Data_Standards
     public class Deleted
     {
         [XmlElement(IsNullable = false)]
-        public Collection<DeletedItem> DeletedItems { get; set; }
+        public Collection<Delete> Delete { get; set; }
     }
-    public class DeletedItem
+    public class Delete
     {
-        public string OrganisationID { get; set; }
-        public string ClientID { get; set; }
-        public DateTime DateTime { get; set; }
+        public string DeletedOrganisationID { get; set; }
+        public string DeletedClientID { get; set; }
+        public DateTime DeletedDateTime { get; set; }
         public string TennisId { get; set; }
     }
 
@@ -41,13 +41,13 @@ namespace Tennis_Open_Data_Standards
     public class Merged
     {
         [XmlElement(IsNullable = false)]
-        public Collection<MergedItem> MergedItems { get; set; }
+        public Collection<Merge> Merge { get; set; }
     }
-    public class MergedItem
+    public class Merge
     {
-        public string OrganisationID { get; set; }
-        public string ClientID { get; set; }
-        public DateTime DateTime { get; set; }
+        public string MergedOrganisationID { get; set; }
+        public string MergedClientID { get; set; }
+        public DateTime MergedDateTime { get; set; }
         public string KeeperTennisId { get; set; }
         public string RemoverTennisId { get; set; }
     }
