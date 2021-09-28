@@ -11,9 +11,8 @@ namespace Tennis_Open_Data_Standards
         [XmlElement(IsNullable = false)]
         public Collection<Court> Court { get; set; }
     }
-
     public class Court : CommonElements
-    {
+        {
         /// <summary>
         /// CourtId
         /// </summary>
@@ -83,7 +82,7 @@ namespace Tennis_Open_Data_Standards
         /// </remarks>
 
         //XML minOccurs=0 to 1
-        public DateTime? SurfacedDate { get; set; }
-
-    }
+        public DateTime? SurfacedDate { get; set; }            
+        
+    }    
 }

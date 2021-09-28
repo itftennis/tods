@@ -13,11 +13,12 @@ namespace Tennis_Open_Data_Standards
     public class RankingItem
     {
         //XML minOccurs=1 to 1
-        [XmlElement(IsNullable = true)]        
+        [XmlElement(IsNullable = true)]
         public string Type { get; set; }
         //XML minOccurs=1 to 1
         public int? SortOrder { get; set; }
-        //XML minOccurs=1 to 1        
+        //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         [JsonProperty(Required = Required.Always)]
         public int Rank { get; set; }
         public string Result { get; set; }

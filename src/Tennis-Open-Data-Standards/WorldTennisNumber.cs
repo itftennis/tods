@@ -21,7 +21,8 @@ namespace Tennis_Open_Data_Standards
         [JsonProperty(Required = Required.Always)]
         public string TennisId { get; set; }
         [JsonProperty(Required = Required.Always)]
-        //XML minOccurs=1 to 1        
+        //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         public decimal TennisNumber { get; set; }
         [JsonProperty(Required = Required.Always)]
         //XML minOccurs=1 to 1
@@ -29,14 +30,17 @@ namespace Tennis_Open_Data_Standards
         public string WorldTennisNumberType { get; set; }
         [JsonProperty(Required = Required.Always)]
 
-        //XML minOccurs=1 to 1        
+        //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         public decimal Confidence { get; set; }
         [JsonProperty(Required = Required.Always)]
 
-        //XML minOccurs=1 to 1        
+        //XML minOccurs=1 to 1
+        [XmlElement(IsNullable = true)]
         public DateTime RatingDate { get; set; }
 
-        //XML minOccurs=0 to 1        
+        //XML minOccurs=0 to 1
+        [XmlElement(IsNullable = true)]
         [NoUnboundCustom]
         [XmlElement("MatchUps", typeof(MatchUps))]
         public Collection<MatchUp> MatchUps { get; set; }

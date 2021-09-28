@@ -14,7 +14,7 @@ namespace Tennis_Open_Data_Standards
     /// <remarks>
     /// This is a root element and holds all the collections 
     /// </remarks>
-    [Tods(Version = "0.0.8.1")]
+    [Tods(Version = "0.0.9")]
     public class Tennis : ITennis
     {
         /// <summary>
